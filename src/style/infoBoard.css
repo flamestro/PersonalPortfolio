@@ -1,0 +1,18 @@
+div[class^="infoBoard"], div[class*=' infoBoard'] {
+
+}
+
+.infoContainer {
+  margin: 0 !important;
+}
+
+.infoElement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+}
+
+.infoText {
+  font-family: monospace;
+}
