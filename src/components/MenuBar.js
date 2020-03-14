@@ -8,6 +8,7 @@ class Menu extends React.Component {
      isDesktop: false
    };
    this.updatePredicate = this.updatePredicate.bind(this);
+   this.dropDownFunction = this.dropDownFunction.bind(this);
    }
 
   componentDidMount(){
@@ -20,8 +21,13 @@ class Menu extends React.Component {
   }
 
   updatePredicate() {
-      this.setState({ isDesktop: window.innerWidth > 1450 });
+      this.setState({ isDesktop: window.innerWidth > 960 });
     }
+  dropDownFunction() {
+      document.getElementById("dropDownID").classList.toggle("show");
+  }
+
+
   render(){
     const isDesktop = this.state.isDesktop;
     const listItems = this.props.menuItems.map((menuItem) =>
@@ -35,8 +41,8 @@ class Menu extends React.Component {
           </div>
         ) : (
           <div class="dropdown">
-          <button class="menuBarDropDown">Menu</button>
-          <div class="dropdown-content">
+          <button onClick={this.dropDownFunction} class="menuBarDropDown">Menu</button>
+          <div class="dropdown-content" id="dropDownID">
             {listItems}
           </div>
         </div>
@@ -49,7 +55,3 @@ class Menu extends React.Component {
 }
 
 export default Menu;
-/*
-
-
-*/

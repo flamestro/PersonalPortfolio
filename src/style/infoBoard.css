@@ -10,7 +10,7 @@ div[class^="infoBoard"], div[class*=' infoBoard'] {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 3em;
+  font-size: 3vw;
 }
 
 .infoText {

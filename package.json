@@ -1,6 +1,7 @@
 {
   "name": "personal-portfolio",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "homepage": "http://www.kilicahmet.de",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",

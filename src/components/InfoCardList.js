@@ -1,14 +1,49 @@
 import React from 'react'
 import InfoBoardCard from './InfoBoardCard'
 
-function InfoCardList(props){
-  let toggle = true;
-  const listItems = props.infoCardDataList.map((infoCardData) =>
-  <InfoBoardCard infoCardData={infoCardData} key={infoCardData.id} invert={toggle = !toggle}/>);
-  return (<div>
-      {listItems}
-    </div>
-  );
-}
+class InfoCardList extends React.Component {
+  constructor(props) {
+   super(props);
+   this.state = {
+     isDesktop: false
+   };
+   this.updatePredicate = this.updatePredicate.bind(this);
+   }
 
+  componentDidMount(){
+    this.updatePredicate();
+    window.addEventListener("resize", this.updatePredicate);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updatePredicate);
+  }
+
+  updatePredicate() {
+      this.setState({ isDesktop: window.innerWidth > 960 });
+    }
+  render(){
+    const isDesktop = this.state.isDesktop;
+    let toggle = true;
+    const listItemsDesktop = this.props.infoCardDataList.map((infoCardData) =>
+    <InfoBoardCard infoCardData={infoCardData} key={infoCardData.id} invert={toggle = !toggle}/>);
+    const listItemsMobile = this.props.infoCardDataList.map((infoCardData) =>
+    <InfoBoardCard infoCardData={infoCardData} key={infoCardData.id} invert={false}/>);
+    return (
+      <div>
+        {isDesktop ? (
+          <div>
+                {listItemsDesktop}
+          </div>
+        ) : (
+          <div>
+            {listItemsMobile}
+          </div>
+
+        )}
+      </div>
+
+  );
+  }
+}
 export default InfoCardList;

@@ -1,4 +1,4 @@
-div[class^="menuItemID"], div[class*=' menuItemID'] {
+a[class^="menuItemID"], a[class*=' menuItemID'] {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,11 +18,15 @@ div[class^="menuItemID"], div[class*=' menuItemID'] {
   z-index: 100;
 }
 
-div[class^="menuItemID"], div[class*=' menuItemID']:hover {
+a[class^="menuItemID"]:hover, a[class*=' menuItemID']:hover{
    box-shadow: rgb(255,99,71) 1.175px 0.35em 1.175em, rgb(255,127,80) 1.175px 0.175em 0.5em;
    transform: translateY(-3px) scale(1.01);
    cursor: pointer;
    z-index: 100;
+   text-decoration: none;
+   -webkit-tap-highlight-color: rgba(0,0,0,0);
+-webkit-user-select: none;
+-webkit-touch-callout: none
 }
 
 .menuBar {
@@ -43,12 +47,12 @@ div[class^="menuItemID"], div[class*=' menuItemID']:hover {
   font-size: 3rem;
   border: none;
   width: 100%;
+  cursor: pointer;
 }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   width: 100%;
-
   position: relative;
   display: inline-block;
 }
@@ -63,19 +67,5 @@ div[class^="menuItemID"], div[class*=' menuItemID']:hover {
   z-index: 1;
 }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
