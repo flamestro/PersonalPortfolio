@@ -12,9 +12,7 @@ function App(props) {
   return (
     <div id="App">
       <MenuBar menuItems={props.menuItems}/>
-      <div className="mainContent">
-        <InfoBoard user={props.user} infoCardDataList={props.infoCardDataList}/>
-      </div>
+      <InfoBoard user={props.user} infoCardDataList={props.infoCardDataList}/>
     </div>
   );
 }

@@ -15,6 +15,7 @@ body {
   border: 2px solid black;
 }
 
+
 .imageContainer{
   background: orange;
   color: orange;
@@ -24,4 +25,18 @@ body {
 .image {
   object-fit: cover;
   max-height: 200px;
+}
+
+div[class^="container"], a[class*=' container'] {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+div[class^="col"], a[class*=' col'] {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#root{
+  width: 100%;
 }

@@ -4,7 +4,7 @@ a[class^="menuItemID"], a[class*=' menuItemID'] {
   justify-content: center;
   align-items: center;
   background: orange;
-  font-size: 3rem;
+  font-size: 2rem;
   color: #fff;
   box-shadow: rgb(255,99,71) 0px 0.15rem 0.5rem, rgb(255,127,80) 0px 0.075rem 0.175rem;
   height: 100%;
@@ -44,7 +44,7 @@ a[class^="menuItemID"]:hover, a[class*=' menuItemID']:hover{
   color: white;
   font-family: 'Roboto', sans-serif;
   padding: 16px;
-  font-size: 3rem;
+  font-size: 2rem;
   border: none;
   width: 100%;
   cursor: pointer;

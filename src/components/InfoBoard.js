@@ -1,13 +1,14 @@
 import React from 'react'
 import InfoCardList from './InfoCardList'
+import {Container} from 'react-bootstrap';
 
 function InfoBoard(props) {
 
 
   return (
-    <div className="infoContainer row">
+    <Container fluid className="infoContainer">
       <InfoCardList infoCardDataList={props.infoCardDataList}/>
-    </div>
+    </Container>
 );
 }
 

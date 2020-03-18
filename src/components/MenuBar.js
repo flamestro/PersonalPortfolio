@@ -1,5 +1,6 @@
 import React from 'react';
 import MenuItem from './MenuItem'
+import {Row, Container, Col} from 'react-bootstrap'
 
 class Menu extends React.Component {
   constructor(props) {
@@ -22,7 +23,8 @@ class Menu extends React.Component {
 
   updatePredicate() {
       this.setState({ isDesktop: window.innerWidth > 960 });
-    }
+  }
+
   dropDownFunction() {
       document.getElementById("dropDownID").classList.toggle("show");
   }
@@ -31,25 +33,23 @@ class Menu extends React.Component {
   render(){
     const isDesktop = this.state.isDesktop;
     const listItems = this.props.menuItems.map((menuItem) =>
-    <MenuItem menuItem={menuItem} dropdown={isDesktop} key={menuItem.id}/>);
+    <Col key={menuItem.id}><MenuItem menuItem={menuItem} dropdown={isDesktop}/></Col>);
 
     return (
-      <div>
+      <Container fluid>
         {isDesktop ? (
-          <div className="menuBar row bordered">
-                {listItems}
-          </div>
+              <Row className="menuBar bordered">
+                  {listItems}
+              </Row>
         ) : (
           <div className="dropdown">
-          <button onClick={this.dropDownFunction} className="menuBarDropDown">Menu</button>
-          <div className="dropdown-content" id="dropDownID">
-            {listItems}
+            <button onClick={this.dropDownFunction} className="menuBarDropDown">Menu</button>
+              <div className="dropdown-content" id="dropDownID">
+                {listItems}
+              </div>
           </div>
-        </div>
-
         )}
-      </div>
-
+      </Container>
   );
   }
 }
