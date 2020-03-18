@@ -36,13 +36,13 @@ class Menu extends React.Component {
     return (
       <div>
         {isDesktop ? (
-          <div class="menuBar row bordered">
+          <div className="menuBar row bordered">
                 {listItems}
           </div>
         ) : (
-          <div class="dropdown">
-          <button onClick={this.dropDownFunction} class="menuBarDropDown">Menu</button>
-          <div class="dropdown-content" id="dropDownID">
+          <div className="dropdown">
+          <button onClick={this.dropDownFunction} className="menuBarDropDown">Menu</button>
+          <div className="dropdown-content" id="dropDownID">
             {listItems}
           </div>
         </div>

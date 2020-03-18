@@ -2,7 +2,7 @@ import React from 'react';
 import SimpleImage from './SimpleImage';
 
 function InfoBoardCard(props){
-  const InfoCardImage = <SimpleImage className="image" pictureURL={props.infoCardData.infoCardPictureURL}/>;
+  const InfoCardImage = <SimpleImage className="image" pictureURL={props.infoCardData.infoCardPictureURL} altText={props.infoCardData.imageALT}/>;
   if(props.invert){
     return (
       <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
