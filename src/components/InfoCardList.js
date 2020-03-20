@@ -20,7 +20,7 @@ class InfoCardList extends React.Component {
   }
 
   updatePredicate() {
-      this.setState({ isDesktop: window.innerWidth > 960 });
+      this.setState({ isDesktop: window.innerWidth > 992 });
     }
   render(){
     const isDesktop = this.state.isDesktop;

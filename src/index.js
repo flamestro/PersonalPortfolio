@@ -51,7 +51,9 @@ const menuItems = [{
   link: "https://medium.com/@flamestro"
 }];
 
-ReactDOM.render(<App menuItems={menuItems} infoCardDataList={infoCardDataList}/>, document.getElementById('root'));
+ReactDOM.render(
+  <App menuItems={menuItems} infoCardDataList={infoCardDataList}/>
+, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
