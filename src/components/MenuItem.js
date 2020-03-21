@@ -35,7 +35,7 @@ z-index: 100;
 function MenuItem(props) {
 
   return (
-    <MenuItemElement  href={props.menuItem.link} target="_blank" rel="noopener noreferrer">
+    <MenuItemElement href={props.menuItem.link} target="_blank" rel="noopener noreferrer">
       {props.menuItem.name}
     </MenuItemElement>
   );

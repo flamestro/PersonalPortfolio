@@ -14,28 +14,28 @@ class App extends React.Component {
       displayWidth: 0
     };
     this.updatePredicate = this.updatePredicate.bind(this);
-   }
- 
-   componentDidMount(){
-     this.updatePredicate();
-     window.addEventListener("resize", this.updatePredicate);
-   }
- 
-   componentWillUnmount() {
-     window.removeEventListener("resize", this.updatePredicate);
-   }
- 
-   updatePredicate() {
-     this.setState({ isDesktop: window.innerWidth >= 992 });
-     this.setState({ displayWidth: window.innerWidth });
-   }
-  render(){
+  }
+
+  componentDidMount() {
+    this.updatePredicate();
+    window.addEventListener("resize", this.updatePredicate);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updatePredicate);
+  }
+
+  updatePredicate() {
+    this.setState({ isDesktop: window.innerWidth >= 992 });
+    this.setState({ displayWidth: window.innerWidth });
+  }
+  render() {
     return (
-    <div id="App">
-      <MenuBar state={this.state} menuItems={this.props.menuItems}/>
-      <InfoBoard state={this.state} user={this.props.user} infoCardDataList={this.props.infoCardDataList}/>
-    </div>
-  );
+      <div id="App">
+        <MenuBar state={this.state} menuItems={this.props.menuItems} />
+        <InfoBoard state={this.state} user={this.props.user} infoCardDataList={this.props.infoCardDataList} />
+      </div>
+    );
   }
 }
 export default App;
