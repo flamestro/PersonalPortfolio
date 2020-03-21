@@ -1,3 +1,5 @@
+This is my personal portfolio page, however I made it really generic and it should be easy to adapt it to your content. Feel free to use it on your portfolio page as well. Just adapt the objects in the index.js file to your content and it should be good to go.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
