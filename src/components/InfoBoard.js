@@ -5,7 +5,7 @@ import {Container} from 'react-bootstrap';
 function InfoBoard(props) {
   return (
     <Container fluid className="infoContainer">
-      <InfoCardList infoCardDataList={props.infoCardDataList}/>
+      <InfoCardList state={props.state} infoCardDataList={props.infoCardDataList}/>
     </Container>
 );
 }

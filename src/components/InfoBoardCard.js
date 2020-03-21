@@ -3,8 +3,10 @@ import SimpleImage from './SimpleImage';
 import {Col, Row, Container} from 'react-bootstrap';
 
 function InfoBoardCard(props){
+  const displayWidth = props.state.displayWidth
   const InfoCardImage = <SimpleImage className="image" pictureURL={props.infoCardData.infoCardPictureURL} altText={props.infoCardData.imageALT}/>;
-  const textSizeStyle = props.isDesktop ? {fontSize: 20} : {fontSize: 20}
+  const textSizeStyle = displayWidth >= 1200 ? {fontSize: 30}: {fontSize: 20}
+  const imageContainerStyle = {maxHeight: 350}
   const infoText = (
   <div>
     <b>{props.infoCardData.title}</b>
@@ -18,7 +20,7 @@ function InfoBoardCard(props){
       <Container fluid>
         <Row>
           <Col lg={9} className="infoElement infoText bordered" style={textSizeStyle}>{infoText}</Col>
-          <Col lg={3} className="imageContainer infoElement bordered" style={{maxHeight: 350}}>{InfoCardImage}</Col>
+          <Col lg={3} className="imageContainer infoElement bordered" style={imageContainerStyle}>{InfoCardImage}</Col>
         </Row>
       </Container>
       );
@@ -26,7 +28,7 @@ function InfoBoardCard(props){
   return (
     <Container fluid>
       <Row>
-        <Col lg={3} className="imageContainer infoElement bordered" style={{maxHeight: 350}}>{InfoCardImage}</Col>
+        <Col lg={3} className="imageContainer infoElement bordered" style={imageContainerStyle}>{InfoCardImage}</Col>
         <Col lg={9} className="infoElement infoText bordered" style={textSizeStyle}> {infoText}</Col>
       </Row>  
     </Container>

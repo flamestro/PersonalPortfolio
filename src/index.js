@@ -9,7 +9,7 @@ const infoCardDataList =
 [{
   type: "Introduction",
   id: "0",
-  description: "Hey, my Name is Ahmet Kilic and I am an full stack software developer studying Business Informatics! My main stack is Java Spring, Spring Boot and React. I am really interested in Cloud Computing and similar topics. Welcome to my personal portfolio page. Scroll down to see some of my past projects.",
+  description: "Hey, my Name is Ahmet Kilic! I am a full stack software developer studying Business Informatics! My main stack is Java Spring, Spring Boot and React. I am really interested in Cloud Computing and similar topics. Welcome to my personal portfolio page. Scroll down to see some of my past projects.",
   infoCardPictureURL: "https://avatars0.githubusercontent.com/u/23012283?s=460&u=0976e85e757cf6588dbd076ff04a610753c648ce&v=4",
   imageALT: "This is an Picture of Ahmet Kilic"
 },
@@ -17,7 +17,7 @@ const infoCardDataList =
   type: "Project",
   id: "1",
   title: "Blockcerts extension: ",
-  description: "I had the chance to work on an PoC extension for an opensource educational credentialing platform which is called Blockcerts. Learned a lot of stuff about Blockchain Engineering.",
+  description: "I had the chance to work on a PoC extension for an opensource educational credentialing platform which is called Blockcerts. Learned a lot about Blockchain Engineering.",
   usedTech: "Web3, Python, OpenBadges v2, Soliditiy, Ethereum Blockchain, IPFS",
   infoCardPictureURL: "./blockcertsTitlePage.png",
   imageALT: "This is an Screenshot of the website blockcerts.org"
@@ -26,8 +26,8 @@ const infoCardDataList =
   type: "Project",
   id: "2",
   title: "Opensense.network Serverless Migration: ",
-  description: "In this project I had the oportunity to migrate an Data Importer for opensense.network into an Serverless solution. Learned a lot of stuff about Serverless infrastructure and Serverless principles.",
-  usedTech: "Apache OpenWhisk, IBM Cloud Functions, Python, Flask, MongoDB, Serverless framework, Docker",
+  description: "In this project I had the opportunity to migrate a Data Importer for opensense.network into a Serverless solution. Learned a lot about Serverless infrastructure and Serverless principles.",
+  usedTech: "IBM Cloud Functions, Apache OpenWhisk, Python, Flask, MongoDB, Serverless framework, Docker",
   infoCardPictureURL: "./opensenseTitlePage.png",
   imageALT: "This is an Screenshot of the website opensense.network"
 },
@@ -35,7 +35,7 @@ const infoCardDataList =
   type: "Project",
   id: "3",
   title: "Full-Stack Slack Clone: ",
-  description: "Here I developed an simple Slack clone including Front-End and Back-End. Learned a lot of stuff about Rest and MicroServices.",
+  description: "Here I developed an simple Slack clone including Front-End and Back-End. Learned a lot about Rest and MicroServices.",
   usedTech: "Docker, SQL, Java, Spring, Spring Boot, JavaScript, JQuerry, CSS, HTML",
   infoCardPictureURL: "./slackLikeClonePage.png",
   imageALT: "This is an Screenshot of the Full-Stack Slack Clone"
@@ -44,7 +44,7 @@ const infoCardDataList =
   type: "Project",
   id: "4",
   title: "Portfolio Page: ",
-  description: "This project is basically what you see on this webpage. Its a list of some of my projects and relevant links. Learned a lot of stuff about React and Responsive Design.",
+  description: "This project is basically what you see on this webpage. It is a overview of some of my projects and relevant links. Learned a lot about React and Responsive Design.",
   usedTech: "React, CSS",
   infoCardPictureURL: "./portfolioPage.png",
   imageALT: "This is an Screenshot of this portfolio website from Ahmet Kilic"
