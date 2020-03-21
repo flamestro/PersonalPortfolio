@@ -10,7 +10,9 @@ function InfoBoardCard(props){
     <b>{props.infoCardData.title}</b>
     {props.infoCardData.description} 
     {props.infoCardData.usedTech ? <div><br/> <b>TechStack: </b>{props.infoCardData.usedTech} </div> : null }
-  </div>);
+  </div>
+  );
+
   if(props.invert){
     return (
       <Container fluid>
@@ -28,8 +30,7 @@ function InfoBoardCard(props){
         <Col lg={9} className="infoElement infoText bordered" style={textSizeStyle}> {infoText}</Col>
       </Row>  
     </Container>
-
-    );
+  );
 }
 
 export default InfoBoardCard;

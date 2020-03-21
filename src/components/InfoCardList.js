@@ -8,7 +8,7 @@ class InfoCardList extends React.Component {
      isDesktop: false
    };
    this.updatePredicate = this.updatePredicate.bind(this);
-   }
+  }
 
   componentDidMount(){
     this.updatePredicate();
@@ -20,8 +20,9 @@ class InfoCardList extends React.Component {
   }
 
   updatePredicate() {
-      this.setState({ isDesktop: window.innerWidth > 992 });
-    }
+      this.setState({ isDesktop: window.innerWidth >= 992 });
+  }
+
   render(){
     const isDesktop = this.state.isDesktop;
     let toggle = true;
