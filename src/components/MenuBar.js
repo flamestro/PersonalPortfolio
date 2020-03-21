@@ -42,7 +42,7 @@ class Menu extends React.Component {
                   {listItems}
               </Row>
         ) : (
-          <div className="dropdown">
+          <div className="dropdown bordered">
             <button onClick={this.dropDownFunction} className="menuBarDropDown">Menu</button>
               <div className="dropdown-content" id="dropDownID">
                 {listItems}

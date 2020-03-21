@@ -26,9 +26,9 @@ class InfoCardList extends React.Component {
     const isDesktop = this.state.isDesktop;
     let toggle = true;
     const listItemsDesktop = this.props.infoCardDataList.map((infoCardData) =>
-    <InfoBoardCard infoCardData={infoCardData} key={infoCardData.id} invert={toggle = !toggle}/>);
+    <InfoBoardCard infoCardData={infoCardData} key={infoCardData.id} isDesktop={isDesktop} invert={toggle = !toggle}/>);
     const listItemsMobile = this.props.infoCardDataList.map((infoCardData) =>
-    <InfoBoardCard infoCardData={infoCardData} key={infoCardData.id} invert={false}/>);
+    <InfoBoardCard infoCardData={infoCardData} key={infoCardData.id} isDesktop={isDesktop} invert={false}/>);
     return (
       <div>
         {isDesktop ? (
