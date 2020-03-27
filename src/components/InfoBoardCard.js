@@ -1,11 +1,48 @@
 import React from 'react';
 import SimpleImage from './SimpleImage';
 import { Col, Row, Container } from 'react-bootstrap';
+import styled from 'styled-components'
+
+const ImageContainer = styled(Col)`
+padding-top: 0 !important;
+padding-bottom: 0 !important;
+padding-left: 0 !important;
+padding-right: 0 !important;
+align-items: center !important;
+position: relative;
+overflow: hidden;
+background: orange;
+color: orange;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+border: 2px solid black;
+`
+
+const TextContainer = styled(Col)`
+font-family: 'Roboto', sans-serif, monospace;
+padding-top: 0 !important;
+padding-bottom: 0 !important;
+display: flex;
+justify-content: center;
+align-items: center;
+border: 2px solid black;
+`
+
+const ContainerStyled = styled(Container)`
+width: 100%;
+`
+
+const WrappedImage = styled(SimpleImage)`
+object-fit: cover;
+max-height: 200px;
+`
 
 function InfoBoardCard(props) {
   const displayWidth = props.state.displayWidth
-  const InfoCardImage = <SimpleImage className="image" pictureURL={props.infoCardData.infoCardPictureURL} altText={props.infoCardData.imageALT} />;
-  const textSizeStyle = displayWidth >= 1200 ? { fontSize: 30 } : { fontSize: 20 }
+  const InfoCardImage = <WrappedImage pictureURL={props.infoCardData.infoCardPictureURL} altText={props.infoCardData.imageALT} />;
+  const textSizeStyle = displayWidth >= 1400 ? { fontSize: 30 } : { fontSize: 20 }
   const imageContainerStyle = { maxHeight: 350 }
   const infoText = (
     <div>
@@ -14,24 +51,23 @@ function InfoBoardCard(props) {
       {props.infoCardData.usedTech ? <div><br /> <b>TechStack: </b>{props.infoCardData.usedTech} </div> : null}
     </div>
   );
-
   if (props.invert) {
     return (
-      <Container fluid>
+      <ContainerStyled fluid>
         <Row>
-          <Col lg={9} className="infoElement infoText bordered" style={textSizeStyle}>{infoText}</Col>
-          <Col lg={3} className="imageContainer infoElement bordered" style={imageContainerStyle}>{InfoCardImage}</Col>
+          <TextContainer lg={9} style={textSizeStyle}>{infoText}</TextContainer>
+          <ImageContainer lg={3} style={imageContainerStyle}>{InfoCardImage}</ImageContainer>
         </Row>
-      </Container>
+      </ContainerStyled>
     );
   }
   return (
-    <Container fluid>
+    <ContainerStyled fluid>
       <Row>
-        <Col lg={3} className="imageContainer infoElement bordered" style={imageContainerStyle}>{InfoCardImage}</Col>
-        <Col lg={9} className="infoElement infoText bordered" style={textSizeStyle}> {infoText}</Col>
+        <ImageContainer lg={3} style={imageContainerStyle}>{InfoCardImage}</ImageContainer>
+        <TextContainer lg={9} style={textSizeStyle}> {infoText}</TextContainer>
       </Row>
-    </Container>
+    </ContainerStyled>
   );
 }
 

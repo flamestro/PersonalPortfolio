@@ -9,7 +9,7 @@ const infoCardDataList =
   [{
     type: "Introduction",
     id: "0",
-    description: "Hey, my Name is Ahmet Kilic! I am a full stack software developer studying Business Informatics! My main stack is Java Spring, Spring Boot and React. I am really interested in Cloud Computing and similar topics. Welcome to my personal portfolio page. Scroll down to see some of my past projects.",
+    description: "Hey, my Name is Ahmet Kilic! I am a full stack software developer studying Business Informatics! My main stack is Java Spring, Spring Boot and React. I am really interested in Cloud Computing and similar topics. Welcome to my personal portfolio page (WIP). Scroll down to see some of my past projects.",
     infoCardPictureURL: "https://avatars0.githubusercontent.com/u/23012283?s=460&u=0976e85e757cf6588dbd076ff04a610753c648ce&v=4",
     imageALT: "This is an Picture of Ahmet Kilic"
   },

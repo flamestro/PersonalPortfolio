@@ -1,7 +1,5 @@
 import React from 'react';
 import './style/App.css';
-import './style/infoBoard.css';
-import './style/menuItem.css';
 
 import MenuBar from './components/MenuBar';
 import InfoBoard from './components/InfoBoard';

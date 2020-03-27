@@ -1,5 +1,6 @@
 import React from 'react'
 import InfoBoardCard from './InfoBoardCard'
+import { Container } from 'react-bootstrap';
 
 class InfoCardList extends React.Component {
   render() {
@@ -10,7 +11,7 @@ class InfoCardList extends React.Component {
     const listItemsMobile = this.props.infoCardDataList.map((infoCardData) =>
       <InfoBoardCard infoCardData={infoCardData} key={infoCardData.id} state={this.props.state} invert={false} />);
     return (
-      <div>
+      <Container fluid>
         {isDesktop ? (
           <div>
             {listItemsDesktop}
@@ -19,9 +20,8 @@ class InfoCardList extends React.Component {
             <div>
               {listItemsMobile}
             </div>
-
           )}
-      </div>
+      </Container>
     );
   }
 }
