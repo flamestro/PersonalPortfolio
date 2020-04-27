@@ -34,13 +34,14 @@ z-index: 100;
   -webkit-touch-callout: none
 }
 `
+
 function MenuItem(props) {
 
-  return (
-    <MenuItemElement href={props.menuItem.link} target="_blank" rel="noopener noreferrer">
-      {props.menuItem.name}
-    </MenuItemElement>
-  );
+    return (
+        <MenuItemElement href={props.menuItem.link} target="_blank" rel="noopener noreferrer">
+            {props.menuItem.name}
+        </MenuItemElement>
+    );
 }
 
 export default MenuItem;

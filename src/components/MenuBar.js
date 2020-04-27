@@ -1,6 +1,6 @@
 import React from 'react';
 import MenuItem from './MenuItem'
-import { Row, Container, Col } from 'react-bootstrap'
+import {Row, Container, Col} from 'react-bootstrap'
 import styled from 'styled-components'
 
 const MenuBarNoDropDown = styled(Row)`
@@ -40,35 +40,37 @@ z-index: 1;
 `
 
 class Menu extends React.Component {
-  constructor(props) {
-    super(props);
-    this.dropDownFunction = this.dropDownFunction.bind(this);
-  }
-  dropDownFunction() {
-    document.getElementById("dropDownID").classList.toggle("show");
-  }
-  render() {
-    const isDesktop = this.props.state.isDesktop;
-    const listItems = this.props.menuItems.map((menuItem) =>
-      <Col key={menuItem.id}><MenuItem menuItem={menuItem} dropdown={isDesktop} /></Col>);
+    constructor(props) {
+        super(props);
+        this.dropDownFunction = this.dropDownFunction.bind(this);
+    }
 
-    return (
-      <Container fluid>
-        {isDesktop ? (
-          <MenuBarNoDropDown>
-            {listItems}
-          </MenuBarNoDropDown>
-        ) : (
-            <MenuBarDropDown>
-              <DropDownButton onClick={this.dropDownFunction}>Menu</DropDownButton>
-              <DropDownContext id="dropDownID">
-                {listItems}
-              </DropDownContext>
-            </MenuBarDropDown>
-          )}
-      </Container>
-    );
-  }
+    dropDownFunction() {
+        document.getElementById("dropDownID").classList.toggle("show");
+    }
+
+    render() {
+        const isDesktop = this.props.state.isDesktop;
+        const listItems = this.props.menuItems.map((menuItem) =>
+            <Col key={menuItem.id}><MenuItem menuItem={menuItem} dropdown={isDesktop}/></Col>);
+
+        return (
+            <Container fluid>
+                {isDesktop ? (
+                    <MenuBarNoDropDown>
+                        {listItems}
+                    </MenuBarNoDropDown>
+                ) : (
+                    <MenuBarDropDown>
+                        <DropDownButton onClick={this.dropDownFunction}>Menu</DropDownButton>
+                        <DropDownContext id="dropDownID">
+                            {listItems}
+                        </DropDownContext>
+                    </MenuBarDropDown>
+                )}
+            </Container>
+        );
+    }
 }
 
 export default Menu;

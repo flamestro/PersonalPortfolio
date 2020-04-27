@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image } from 'react-bootstrap';
+import {Image} from 'react-bootstrap';
 import styled from 'styled-components'
 
 
@@ -18,15 +18,15 @@ width: 100%;
 
 function SimpleImage(props) {
 
-  if (props.pictureURL && props.altText) {
+    if (props.pictureURL && props.altText) {
+        return (
+            <SimpleStyledImage src={props.pictureURL} alt={props.altText} fluid/>);
+    }
     return (
-      <SimpleStyledImage src={props.pictureURL} alt={props.altText} fluid />);
-  }
-  return (
-    <div>
-      Could not load Picture
-    </div>
-  );
+        <div>
+            Could not load Picture
+        </div>
+    );
 }
 
 export default SimpleImage;
