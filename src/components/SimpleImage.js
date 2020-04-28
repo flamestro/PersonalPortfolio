@@ -12,8 +12,8 @@ align-items: center !important;
 position: relative;
 overflow: hidden;
 /*ImageContainer-Color*/
-background: #FCA502;
-color: #FCA502;
+background: #F0A856;
+color: #F0A856;
 width: 100%;
 `
 
