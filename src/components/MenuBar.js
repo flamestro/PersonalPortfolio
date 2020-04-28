@@ -5,7 +5,8 @@ import styled from 'styled-components'
 
 const MenuBarNoDropDown = styled(Row)`
 overflow: hidden;
-background-color: orange;
+/*MenuBarColor-Color*/
+background-color: #FCA502;
 top: 0;
 width: 100%;
 margin: 0 !important;
@@ -20,7 +21,8 @@ display: inline-block;
 `
 
 const DropDownButton = styled.button`
-background-color: orange;
+/*ButtonColor-Color*/
+background-color: #FCA502;
 color: white;
 font-family: 'Roboto', sans-serif;
 padding: 16px;

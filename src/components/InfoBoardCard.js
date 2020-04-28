@@ -11,8 +11,9 @@ padding-right: 0 !important;
 align-items: center !important;
 position: relative;
 overflow: hidden;
-background: orange;
-color: orange;
+/*ImageContainer-Color*/
+background: #FCA502;
+color: #FCA502;
 width: 100%;
 display: flex;
 justify-content: center;

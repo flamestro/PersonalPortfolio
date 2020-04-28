@@ -6,7 +6,8 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-background: orange;
+/*MenuItemElement-Color*/
+background: #FCA502;
 font-size: 1.5rem;
 padding-top: 5px;
 padding-bottom: 5px;

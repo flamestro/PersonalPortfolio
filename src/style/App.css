@@ -1,13 +1,6 @@
-body {
-    background: #fff;
-    color: rgb(19, 19, 19);
-    font-family: 'Roboto', sans-serif, monospace;
-}
-
 #App {
     justify-content: center;
     align-items: center;
-
 }
 
 .image {
@@ -17,7 +10,6 @@ body {
 
 #root {
     width: 100%;
-    background-color: #ffbb3d;
 }
 
 /* adjust bootstrap containers and col's to page design */
