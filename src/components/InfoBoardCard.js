@@ -58,13 +58,13 @@ function InfoBoardCard(props) {
         <ContainerStyled fluid>
             {props.invert ? (
                 <Row>
-                    <TextContainer lg={9} style={textSizeStyle}>{infoText}</TextContainer>
-                    <ImageContainer lg={3} style={imageContainerStyle}>{InfoCardImage}</ImageContainer>
+                    <TextContainer md={9} style={textSizeStyle}>{infoText}</TextContainer>
+                    <ImageContainer md={3} style={imageContainerStyle}>{InfoCardImage}</ImageContainer>
                 </Row>
             ) : (
                 <Row>
-                    <ImageContainer lg={3} style={imageContainerStyle}>{InfoCardImage}</ImageContainer>
-                    <TextContainer lg={9} style={textSizeStyle}> {infoText}</TextContainer>
+                    <ImageContainer md={3} style={imageContainerStyle}>{InfoCardImage}</ImageContainer>
+                    <TextContainer md={9} style={textSizeStyle}> {infoText}</TextContainer>
                 </Row>
             )}
         </ContainerStyled>
