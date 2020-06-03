@@ -31,8 +31,8 @@ position: relative;
 export const MenuBar = props => {
 
         const menuItemAmount = props.menuItems.length
-        const listItems = props.menuItems.map((menuItem) =>
-            <MenuItem key={menuItem.id} menuItem={menuItem} menuItemAmount={menuItemAmount}/>);
+        const listItems = props.menuItems.map((menuItemIterator) =>
+            <MenuItem key={menuItemIterator.id} menuItem={menuItemIterator} menuItemAmount={menuItemAmount}/>);
 
         return (
             <>

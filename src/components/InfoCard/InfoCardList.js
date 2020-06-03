@@ -1,8 +1,16 @@
 import React from 'react'
-import InfoBoardCard from './InfoBoardCard'
+import {InfoBoardCard} from './InfoBoardCard'
 import styled from 'styled-components'
 
-const InfoBoardCardDesktop = styled(InfoBoardCard) `
+const MobileWrapper = styled.div`
+display: block;
+
+@media (min-width: 600px) {
+    display: none;
+}
+`
+
+const DesktopWrapper = styled.div`
 display: none;
 max-width: 100%;
 min-width: 100%;
@@ -11,23 +19,29 @@ min-width: 100%;
 }
 `
 
-const InfoBoardCardMobile = styled(InfoBoardCard) `
-display: block;
-
-@media (min-width: 600px) {
-    display: none;
+const ListItemsDesktop = props => {
+    let toggle = false;
+    const list = props.infoCards.map((infoCardData) =>
+        <InfoBoardCard infoCardData={infoCardData} key={infoCardData.id}
+                       invert={toggle = !toggle}/>);
+    return list;
 }
-`
-export const InfoCardList = props => {
-        let toggle = true;
-        const listItemsDesktop = props.infoCardDataList.map((infoCardData) =>
-            <InfoBoardCardDesktop infoCardData={infoCardData} key={infoCardData.id} state={props.state}
-                           invert={toggle = !toggle}/>);
-        const listItemsMobile = props.infoCardDataList.map((infoCardData) =>
-            <InfoBoardCardMobile infoCardData={infoCardData} key={infoCardData.id} state={props.state} invert={false}/>);
-        return (
-            <>
-                {listItemsDesktop}
-            </>
-        );
+
+const ListItemsMobile = props => {
+    const list = props.infoCards.map((infoCardData) =>
+        <InfoBoardCard infoCardData={infoCardData} key={infoCardData.id} invert={false}/>);
+    return list;
+}
+
+export const InfoCardList = (props) => {
+    return (
+        <>
+            <DesktopWrapper>
+                <ListItemsDesktop infoCards={props.infoCards}/>
+            </DesktopWrapper>
+            <MobileWrapper>
+                <ListItemsMobile infoCards={props.infoCards}/>
+            </MobileWrapper>
+        </>
+    );
 }

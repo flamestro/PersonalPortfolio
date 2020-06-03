@@ -2,74 +2,88 @@ import React from 'react';
 import styled from 'styled-components'
 
 const LineWrapper = styled.div`
-width: 100%;
-height: 220px;
-overflow: hidden;
-display: block;
-position: relative;
+    width: 100%;
+    height: 440px;
+    overflow: hidden;
+    display: block;
+    @media (min-width: 600px) {
+        height: 220px;
+        position: relative;
+    }
 `
 
 const TextContainer = styled.span`
-    position: absolute;
-    top: 0;
-    left: ${props => props.invert ? "0" : ""};
-    right: ${props => props.invert ? "" : "0"};
     font-family: 'Roboto', sans-serif, monospace;
     font-size: 20px;
-    display: inline-block;
+    display: block;
     background-color: white;
-    height: 100%;
+    height: 50%;
     width: 100%;
     border: solid 2px black;
     @media (min-width: 600px) {
+        display:inline-block;
         width: 75%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: ${props => props.invert ? "0" : ""};
+        left: ${props => props.invert ? "" : "0"};
     }
 `
 
 const CustomSimpleImage = styled.img`
-    position: absolute;
-    top: 0;
-    right: ${props => props.invert ? "0" : ""};
-    left: ${props => props.invert ? "" : "0"};
+    
     width: 100%;
-    height: 100%;
+    height: 50%;
     object-fit: cover;
     overflow: hidden;
-    display: inline-block;
+    display: block;
     /*ImageContainer-Color*/
     background-color: #F0A856;
     border: solid 2px black;
     @media (min-width: 600px) {
-       max-width: 25%;
+        display: inline-block;
+        position: absolute;
+        max-width: 25%;
+        top: 0;
+        left: ${props => props.invert ? "0" : ""};
+        right: ${props => props.invert ? "" : "0"};
+        height: 100%;
     }
 `;
 
-function InfoBoardCard(props) {
-    const infoText = (
+const InfoText = (props) => {
+    const textField = (
         <div>
             <b>{props.infoCardData.title}</b>
             {props.infoCardData.description}
             {props.infoCardData.usedTech ? <div><br/> <b>TechStack: </b>{props.infoCardData.usedTech} </div> : null}
         </div>
-    );
+    )
+    return textField
+}
+
+export const InfoBoardCard = (props) => {
     return (
         <>
             {
                 props.invert ?
-                    (<LineWrapper>
-                        <CustomSimpleImage invert={props.invert} src={props.infoCardData.infoCardPictureURL}
-                                           alt={props.infoCardData.imageALT}/>
-                        <TextContainer invert={props.invert}>{infoText}</TextContainer>
-                    </LineWrapper>)
+                    (
+                        <LineWrapper>
+                            <CustomSimpleImage invert={props.invert} src={props.infoCardData.infoCardPictureURL}
+                                               alt={props.infoCardData.imageALT}/>
+                            <TextContainer invert={props.invert}><InfoText infoCardData={props.infoCardData}/></TextContainer>
+                        </LineWrapper>
+                    )
                     :
-                    (<LineWrapper>
-                        <TextContainer>{infoText}</TextContainer>
-                        <CustomSimpleImage src={props.infoCardData.infoCardPictureURL}
-                                           alt={props.infoCardData.imageALT}/>
-                    </LineWrapper>)
+                    (
+                        <LineWrapper>
+                            <TextContainer><InfoText infoCardData={props.infoCardData}/></TextContainer>
+                            <CustomSimpleImage src={props.infoCardData.infoCardPictureURL}
+                                               alt={props.infoCardData.imageALT}/>
+                        </LineWrapper>
+                    )
             }
         </>
     );
 }
-
-export default InfoBoardCard;
