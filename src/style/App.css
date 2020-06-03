@@ -1,6 +1,8 @@
 #App {
     justify-content: center;
     align-items: center;
+    border-left: solid 2px black;
+    border-right: solid 2px black;
 }
 
 .image {
