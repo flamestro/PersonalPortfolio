@@ -2,53 +2,40 @@ import React from 'react';
 import styled from 'styled-components'
 
 const LineWrapper = styled.div`
-    width: 100%;
-    height: 440px;
-    overflow: hidden;
-    display: block;
-    @media (min-width: 600px) {
-        height: 220px;
-        position: relative;
-    }
+    display: flex;
+    flex-wrap: wrap;
+
 `
 
 const TextContainer = styled.span`
+    border: solid 2px black;
+    background-color: white;
     font-family: 'Roboto', sans-serif, monospace;
     font-size: 20px;
-    display: block;
-    background-color: white;
-    height: 50%;
     width: 100%;
-    border: solid 2px black;
+    border: solid 1px black;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
     @media (min-width: 600px) {
-        display:inline-block;
-        width: 75%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        right: ${props => props.invert ? "0" : ""};
-        left: ${props => props.invert ? "" : "0"};
+        flex: 3;
+        order ${props => props.invert ? "1" : "2"};
     }
 `
 
 const CustomSimpleImage = styled.img`
-    
     width: 100%;
-    height: 50%;
+    border: solid 1px black;
+    height: 220px;
     object-fit: cover;
     overflow: hidden;
-    display: block;
-    /*ImageContainer-Color*/
     background-color: #F0A856;
     border: solid 2px black;
     @media (min-width: 600px) {
-        display: inline-block;
-        position: absolute;
-        max-width: 25%;
-        top: 0;
-        left: ${props => props.invert ? "0" : ""};
-        right: ${props => props.invert ? "" : "0"};
-        height: 100%;
+        flex: 1;
+        order ${props => props.invert ? "2" : "1"};
     }
 `;
 
@@ -66,24 +53,12 @@ const InfoText = (props) => {
 export const InfoBoardCard = (props) => {
     return (
         <>
-            {
-                props.invert ?
-                    (
-                        <LineWrapper>
-                            <CustomSimpleImage invert={props.invert} src={props.infoCardData.infoCardPictureURL}
-                                               alt={props.infoCardData.imageALT}/>
-                            <TextContainer invert={props.invert}><InfoText infoCardData={props.infoCardData}/></TextContainer>
-                        </LineWrapper>
-                    )
-                    :
-                    (
-                        <LineWrapper>
-                            <TextContainer><InfoText infoCardData={props.infoCardData}/></TextContainer>
-                            <CustomSimpleImage src={props.infoCardData.infoCardPictureURL}
-                                               alt={props.infoCardData.imageALT}/>
-                        </LineWrapper>
-                    )
-            }
+            <LineWrapper>
+                <CustomSimpleImage src={props.infoCardData.infoCardPictureURL}
+                                   alt={props.infoCardData.imageALT}
+                                   invert={props.invert}/>
+                <TextContainer invert={props.invert}><InfoText infoCardData={props.infoCardData}/></TextContainer>
+            </LineWrapper>
         </>
     );
 }

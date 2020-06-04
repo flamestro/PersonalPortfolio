@@ -3,30 +3,26 @@ import styled from 'styled-components'
 
 const MenuItemElement = styled.a`
     display: block;
-    position: absolute;
-    width: 100%;
-    
+    width: ${props => props.mobile ? 99: 100}%;
+    position: ${props => props.mobile ? "absolute" : "static"};
+    top:  ${props => props.mobile ? (props.index*40 + 40) : 0}px;
     text-align: center;
     border: solid 2px black;
     text-decoration: none !important;
     color: white !important;
     font-family: 'Roboto';
     font-size: 25px;
-    
-    &:nth-child(1) {
-        top: 41;
-    }   
+    background-color:  #F0A856;
     z-index: 10;
     @media (min-width: 600px) {
         position: relative !important;
         display: inline-block;
         width: ${props => 100 / props.menuItemAmount}%;
     }
-    
 `
 export const MenuItem = (props) =>{
     return (
-        <MenuItemElement href={props.menuItem.link} menuItemAmount={props.menuItemAmount} target="_blank" rel="noopener noreferrer">
+        <MenuItemElement index={props.index} mobile={props.mobile} href={props.menuItem.link} menuItemAmount={props.menuItemAmount} absolutetarget="_blank" rel="noopener noreferrer">
             {props.menuItem.name}
         </MenuItemElement>
     );

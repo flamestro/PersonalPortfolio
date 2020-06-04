@@ -20,7 +20,7 @@ min-width: 100%;
 `
 
 const ListItemsDesktop = props => {
-    let toggle = false;
+    let toggle = true;
     const list = props.infoCards.map((infoCardData) =>
         <InfoBoardCard infoCardData={infoCardData} key={infoCardData.id}
                        invert={toggle = !toggle}/>);
