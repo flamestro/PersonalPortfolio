@@ -3,20 +3,20 @@ import {InfoBoardCard} from './InfoBoardCard'
 import styled from 'styled-components'
 
 const MobileWrapper = styled.div`
-display: block;
-
-@media (min-width: 600px) {
-    display: none;
-}
+    display: block;
+    
+    @media (min-width: 600px) {
+        display: none;
+    }
 `
 
 const DesktopWrapper = styled.div`
-display: none;
-max-width: 100%;
-min-width: 100%;
-@media (min-width: 600px) {
-    display: block;
-}
+    display: none;
+    max-width: 100%;
+    min-width: 100%;
+    @media (min-width: 600px) {
+        display: block;
+    }
 `
 
 const ListItemsDesktop = props => {

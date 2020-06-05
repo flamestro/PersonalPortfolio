@@ -23,7 +23,7 @@ const TextContainer = styled.span`
     }
     @media (min-width: 600px) {
         width: 75%;
-        order ${props => props.invert ? "1" : "2"};
+        order: ${props => props.invert ? "1" : "2"};
     }
     @media (min-width: 750px) {
         font-size: 20px;

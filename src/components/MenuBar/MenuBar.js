@@ -41,25 +41,28 @@ const WrapperOuterBoxMobileMenuBar = styled.div`
     background: linear-gradient(grey, white);
 `;
 
-const WrapperDroppedDownMenuItemsAbsolute = styled.div`
-    position: absolute;
-    z-index: 2;
-    width: 100%;
-`;
-
-const WrapperDroppedDownMenuItemsRelative = styled.div`
-    position: relative;
+const WrapperDroppedDownMenuItems = styled.div`
+    position: ${props => {
+        if(props.absolute) 
+            return "absolute";
+        else if(props.relative)
+            return "relative";
+        else 
+            return "static"
+    }};
     z-index: 2;
     width: 100%;
 `;
 
 export const MenuBar = props => {
     const [droppedDown, setDropDown] = useState(false);
+
     function Sleep(milliseconds) {
         return new Promise(resolve => setTimeout(resolve, milliseconds));
     }
+
     const toggleDroppedDown = async () => {
-        await Sleep(100);
+        await Sleep(150);
         setDropDown(!droppedDown);
     }
     const menuItemAmount = props.menuItems.length
@@ -73,12 +76,13 @@ export const MenuBar = props => {
             </StyledMenuBarDesktop>
             <StyledMenuBarMobile>
                 <StyledHeadline onClick={toggleDroppedDown}>Menu</StyledHeadline>
-                {droppedDown ? <WrapperDroppedDownMenuItemsRelative>
-                    <WrapperDroppedDownMenuItemsAbsolute>
-                        {listItems}
-                        <WrapperOuterBoxMobileMenuBar onClick={toggleDroppedDown}/>
-                    </WrapperDroppedDownMenuItemsAbsolute>
-                </WrapperDroppedDownMenuItemsRelative> : null}
+                {droppedDown ?
+                    <WrapperDroppedDownMenuItems relative>
+                        <WrapperDroppedDownMenuItems absolute>
+                            {listItems}
+                            <WrapperOuterBoxMobileMenuBar onClick={toggleDroppedDown}/>
+                        </WrapperDroppedDownMenuItems>
+                    </WrapperDroppedDownMenuItems> : null}
             </StyledMenuBarMobile>
         </>
     );
