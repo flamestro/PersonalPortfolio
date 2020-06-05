@@ -10,17 +10,23 @@ const LineWrapper = styled.div`
 const TextContainer = styled.span`
     background-color: white;
     font-family: 'Roboto', sans-serif, monospace;
-    font-size: 20px;
+    font-size: 14px;
     width: 100%;
-    border: solid 1px black;
+    border: solid 2px black;
     height: 220px;
     display: flex;
     align-items: center;
     padding-left: 10px;
     padding-right: 10px;
+    @media (min-width: 400px) {
+        font-size: 16px;
+    }
     @media (min-width: 600px) {
-        flex: 3;
+        width: 75%;
         order ${props => props.invert ? "1" : "2"};
+    }
+    @media (min-width: 750px) {
+        font-size: 20px;
     }
 `
 
@@ -32,7 +38,7 @@ const CustomSimpleImage = styled.img`
     background-color: #F0A856;
     border: solid 2px black;
     @media (min-width: 600px) {
-        flex: 1;
+        width: 25%;
         order ${props => props.invert ? "2" : "1"};
     }
 `;

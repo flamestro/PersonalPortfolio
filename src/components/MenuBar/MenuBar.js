@@ -35,18 +35,24 @@ const StyledHeadline = styled(Headline)`
 `;
 
 const WrapperOuterBoxMobile = styled.div`
+    overflow: hidden;
     height: 100%;
-    opacity: 0.2;
+    opacity: 0.7;
     background-color: grey;
     position: absolute;
     display: block;
+    top: 50px;
     width: 99%;
 `;
 
 export const MenuBar = props => {
     const [droppedDown, setDropDown] = useState(false);
-    const toggleDroppedDown = () => {
-        setDropDown(!droppedDown)
+    function Sleep(milliseconds) {
+        return new Promise(resolve => setTimeout(resolve, milliseconds));
+    }
+    const toggleDroppedDown = async () => {
+        await Sleep(100);
+        setDropDown(!droppedDown);
     }
     const menuItemAmount = props.menuItems.length
     const listItemsDesktop = props.menuItems.map((menuItemIterator, index) =>
