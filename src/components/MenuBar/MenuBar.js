@@ -10,19 +10,17 @@ const StyledMenuBarDesktop = styled.div`
     width: 100%;
     
     display: none;
-    z-index: 1;
     @media (min-width: 600px) {
         display: flex;
     }
 `
 
 const StyledMenuBarMobile = styled.div`
-    overflow: hidden;
     /*MenuBarColor-Color*/
     background-color: #F0A856;
     width: 100%;
-    
     display: flex;
+    position: relative;
     flex-direction: column;
     @media (min-width: 600px) {
         display: none;
@@ -34,15 +32,25 @@ const StyledHeadline = styled(Headline)`
     cursor: pointer;
 `;
 
-const WrapperOuterBoxMobile = styled.div`
-    overflow: hidden;
-    height: 100%;
+const WrapperOuterBoxMobileMenuBar = styled.div`
+    height: 3000px;
     opacity: 0.7;
-    background-color: grey;
-    position: absolute;
     display: block;
-    top: 50px;
-    width: 99%;
+    width: 100%;
+    z-index: 1;
+    background: linear-gradient(grey, white);
+`;
+
+const WrapperDroppedDownMenuItemsAbsolute = styled.div`
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+`;
+
+const WrapperDroppedDownMenuItemsRelative = styled.div`
+    position: relative;
+    z-index: 2;
+    width: 100%;
 `;
 
 export const MenuBar = props => {
@@ -55,21 +63,22 @@ export const MenuBar = props => {
         setDropDown(!droppedDown);
     }
     const menuItemAmount = props.menuItems.length
-    const listItemsDesktop = props.menuItems.map((menuItemIterator, index) =>
+    const listItems = props.menuItems.map((menuItemIterator, index) =>
         <MenuItem key={index} menuItem={menuItemIterator} menuItemAmount={menuItemAmount}/>);
-    const listItemsMobile = props.menuItems.map((menuItemIterator, i) =>
-        <MenuItem key={menuItemIterator.id} index={i} menuItem={menuItemIterator} mobile
-                  menuItemAmount={menuItemAmount}/>);
 
     return (
         <>
             <StyledMenuBarDesktop menuItems={props.menuItems}>
-                {listItemsDesktop}
+                {listItems}
             </StyledMenuBarDesktop>
             <StyledMenuBarMobile>
                 <StyledHeadline onClick={toggleDroppedDown}>Menu</StyledHeadline>
-                {droppedDown ? listItemsMobile : null}
-                {droppedDown ? <WrapperOuterBoxMobile onClick={toggleDroppedDown}/> : null}
+                {droppedDown ? <WrapperDroppedDownMenuItemsRelative>
+                    <WrapperDroppedDownMenuItemsAbsolute>
+                        {listItems}
+                        <WrapperOuterBoxMobileMenuBar onClick={toggleDroppedDown}/>
+                    </WrapperDroppedDownMenuItemsAbsolute>
+                </WrapperDroppedDownMenuItemsRelative> : null}
             </StyledMenuBarMobile>
         </>
     );
