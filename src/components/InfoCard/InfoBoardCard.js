@@ -8,7 +8,6 @@ const LineWrapper = styled.div`
 `
 
 const TextContainer = styled.span`
-    border: solid 2px black;
     background-color: white;
     font-family: 'Roboto', sans-serif, monospace;
     font-size: 20px;
@@ -27,7 +26,6 @@ const TextContainer = styled.span`
 
 const CustomSimpleImage = styled.img`
     width: 100%;
-    border: solid 1px black;
     height: 220px;
     object-fit: cover;
     overflow: hidden;
@@ -40,14 +38,13 @@ const CustomSimpleImage = styled.img`
 `;
 
 const InfoText = (props) => {
-    const textField = (
+    return (
         <div>
             <b>{props.infoCardData.title}</b>
             {props.infoCardData.description}
             {props.infoCardData.usedTech ? <div><br/> <b>TechStack: </b>{props.infoCardData.usedTech} </div> : null}
         </div>
     )
-    return textField
 }
 
 export const InfoBoardCard = (props) => {
