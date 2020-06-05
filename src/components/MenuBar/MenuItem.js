@@ -10,7 +10,6 @@ const MenuItemElement = styled.a`
     border: solid 2px black;
     text-decoration: none !important;
     color: white !important;
-    font-family: 'Roboto';
     font-size: 25px;
     background-color:  #F0A856;
     z-index: 10;
