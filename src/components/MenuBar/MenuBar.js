@@ -5,7 +5,6 @@ import {Headline} from "../Headline/Headline";
 
 const StyledMenuBarDesktop = styled.div`
     overflow: hidden;
-    /*MenuBarColor-Color*/
     background-color: #F0A856;
     width: 100%;
     
@@ -16,7 +15,6 @@ const StyledMenuBarDesktop = styled.div`
 `
 
 const StyledMenuBarMobile = styled.div`
-    /*MenuBarColor-Color*/
     background-color: #F0A856;
     width: 100%;
     display: flex;
