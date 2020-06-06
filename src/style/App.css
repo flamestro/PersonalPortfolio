@@ -1,35 +1,11 @@
 #App {
-    justify-content: center;
-    align-items: center;
-}
-
-.image {
-    object-fit: cover;
-    max-height: 200px;
-}
-
-#root {
-    width: 100%;
-}
-
-/* adjust bootstrap containers and col's to page design */
-div[class^="container"], a[class*=' container'] {
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-div[class^="col"], a[class*=' col'] {
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-.show {
-    display: block !important;
+    border-left: solid 2px black;
+    border-right: solid 2px black;
+    overflow: hidden;
 }
 
 .view-container {
     max-width: 1080px;
-    align-items: center;
     display: block;
     margin-left: auto;
     margin-right: auto;
