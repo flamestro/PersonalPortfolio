@@ -10,6 +10,7 @@ const Field = styled.div`
   justify-content: center;
   background-color: #FFFFFF;
   font-size: 65px;
+  user-select: none;
 `
 
 const StyledGameBoard = styled.div`
@@ -26,6 +27,7 @@ const StatusText = styled.div`
   width: 300px;
   border: solid black 3px;
   background-color: #dddddd;
+  user-select: none;
 `
 
 const ScoreBoard = styled.div`
@@ -41,6 +43,7 @@ const ScoreKeeper = styled.div`
   flex: 1;
   justify-content: center;
   display:flex;
+  user-select: none;
 `
 
 const TicTacToeWrapper = styled.div`
@@ -54,22 +57,36 @@ const TicTacToeWrapper = styled.div`
 
 const SimpleModeButton = styled.div`
   border-bottom-right-radius: 10px;
+  user-select: none;
   border: solid black 3px;
   display: flex;
   justify-content: center;
   font-size: 20px;
   flex: 1;
   background-color: #d6d8d9;
+  transition: background-color 0.6s;
+  &:hover{
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: background-color 1s;
+  }
 `
 
 const SimpleResetButton = styled.div`
   border-bottom-left-radius: 10px;
   border: solid black 3px;
+  user-select: none;
   flex: 1;
   display: flex;
   justify-content: center;
   font-size: 20px;
   background-color: #d6d8d9;
+  transition: background-color 0.6s;
+  &:hover{
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: background-color 1s;
+  }
 `
 
 const ButtonWrapper = styled.div`
@@ -106,6 +123,11 @@ export const TicTacToe = () => {
         setBoard([...initialBoard]);
     }
 
+    const resetScore = () => {
+        setScoreX(0);
+        setScoreO(0);
+    }
+
     const checkBoard = (symbol, winningFieldIndexes) => {
         if (board[winningFieldIndexes[0]].symbol === symbol &&
             board[winningFieldIndexes[1]].symbol === symbol &&
@@ -116,6 +138,12 @@ export const TicTacToe = () => {
         }
         return gameResult.keep
     };
+
+    const checkForBestMove = () => {
+        const newBoard = [...board];
+        const simulatedTurn = "X"
+
+    }
 
     const updateField = (index) => {
         const newBoard = [...board];
@@ -151,7 +179,6 @@ export const TicTacToe = () => {
     const fields = board.map(field => (
         <Field onClick={() => updateField(field.id)} key={field.id}>{field.symbol}</Field>));
 
-
     return (
         <>
             <StyledGameBoard>
@@ -165,9 +192,14 @@ export const TicTacToe = () => {
                 </TicTacToeWrapper>
                 <StatusText> {turn}'s Turn</StatusText>
                 <StatusText> {statusText} </StatusText>
+                <StatusText> {mode === gameMode.PLAYER ? "Player vs Player" : "Player vs AI"} </StatusText>
                 <ButtonWrapper>
-                    <SimpleResetButton> Reset </SimpleResetButton>
-                    <SimpleModeButton> {mode === gameMode.PLAYER ? "Switch to PvE" : "Switch to PvP"}</SimpleModeButton>
+                    <SimpleResetButton onClick={() => {
+                        resetScore()
+                    }}> Reset </SimpleResetButton>
+                    <SimpleModeButton onClick={() => {
+                        mode === gameMode.PLAYER ? setMode(gameMode.AI) : setMode(gameMode.PLAYER);
+                    }}> {mode === gameMode.PLAYER ? "Switch Mode" : "Switch Mode"}</SimpleModeButton>
                 </ButtonWrapper>
             </StyledGameBoard>
         </>
