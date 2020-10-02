@@ -1,5 +1,4 @@
-import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 
 export const Headline = styled.div`
@@ -9,4 +8,4 @@ export const Headline = styled.div`
     font-weight: bold;
     color: white;
     width: 100%;
-`
+`;

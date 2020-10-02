@@ -1,11 +1,11 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const LineWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
 
-`
+`;
 
 const TextContainer = styled.span`
     background-color: white;
@@ -23,12 +23,12 @@ const TextContainer = styled.span`
     }
     @media (min-width: 600px) {
         width: 75%;
-        order: ${props => props.invert ? "1" : "2"};
+        order: ${(props) => props.invert ? '1' : '2'};
     }
     @media (min-width: 750px) {
         font-size: 20px;
     }
-`
+`;
 
 const CustomSimpleImage = styled.img`
     width: 100%;
@@ -39,19 +39,26 @@ const CustomSimpleImage = styled.img`
     border: solid 2px black;
     @media (min-width: 600px) {
         width: 25%;
-        order ${props => props.invert ? "2" : "1"};
+        order ${(props) => props.invert ? '2' : '1'};
     }
+`;
+
+const StyledGithubIcon = styled.img`
+    width: 25px;
+    height: 25px;
 `;
 
 const InfoText = (props) => {
     return (
         <div>
             <b>{props.infoCardData.title}</b>
-            {props.infoCardData.description}
+            {props.infoCardData.description} {props.infoCardData.gitHubLink ?
+            <a target="_blank" href={props.infoCardData.gitHubLink}><StyledGithubIcon
+                src={"../../../resources/githubIcon.png"}/></a> : null}
             {props.infoCardData.usedTech ? <div><br/> <b>TechStack: </b>{props.infoCardData.usedTech} </div> : null}
         </div>
-    )
-}
+    );
+};
 
 export const InfoBoardCard = (props) => {
     return (
@@ -64,4 +71,4 @@ export const InfoBoardCard = (props) => {
             </LineWrapper>
         </>
     );
-}
+};
