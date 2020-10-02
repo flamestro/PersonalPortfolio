@@ -10,7 +10,7 @@ const LineWrapper = styled.div`
 const TextContainer = styled.span`
     background-color: white;
     font-family: 'Roboto', sans-serif, monospace;
-    font-size: 14px;
+    font-size: 12px;
     width: 100%;
     border: solid 2px black;
     height: 220px;

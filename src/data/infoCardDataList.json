@@ -41,7 +41,7 @@
     "id": "4",
     "title": "Portfolio Page: ",
     "description": "This project is basically what you see on this page. It is an overview of some of my projects and relevant links. Learned a lot about React and Responsive Design.",
-    "usedTech": "React, CSS",
+    "usedTech": "React, React Router, CSS",
     "infoCardPictureURL": "https://github.com/flamestro/PersonalPortfolio/blob/master/public/resources/portfolioPage.png?raw=true",
     "imageALT": "This is a Screenshot of this portfolio website from Ahmet Kilic",
     "gitHubLink": "https://github.com/flamestro/PersonalPortfolio"
