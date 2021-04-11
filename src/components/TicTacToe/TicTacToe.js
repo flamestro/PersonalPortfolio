@@ -100,11 +100,6 @@ const gameResult = {
     keep: "keep"
 };
 
-const gameMode = {
-    AI: "PvE",
-    PLAYER: "PvP"
-};
-
 export const TicTacToe = () => {
     const initialBoard = [{"id": 0, "symbol": ""}, {"id": 1, "symbol": ""}, {"id": 2, "symbol": ""},
         {"id": 3, "symbol": ""}, {"id": 4, "symbol": ""}, {"id": 5, "symbol": ""},
@@ -112,7 +107,6 @@ export const TicTacToe = () => {
     const winningFieldIndexes = [[0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 1, 2], [3, 4, 5], [6, 7, 8], [6, 4, 2], [8, 4, 0]]
 
     const [scoreO, setScoreO] = useState(0)
-    const [mode, setMode] = useState(gameMode.PLAYER)
     const [scoreX, setScoreX] = useState(0)
     const [turn, setTurn] = useState("X")
     const [statusText, setText] = useState("Let us Start!")
@@ -138,12 +132,6 @@ export const TicTacToe = () => {
         }
         return gameResult.keep
     };
-
-    const checkForBestMove = () => {
-        const newBoard = [...board];
-        const simulatedTurn = "X"
-
-    }
 
     const updateField = (index) => {
         const newBoard = [...board];
@@ -192,14 +180,10 @@ export const TicTacToe = () => {
                 </TicTacToeWrapper>
                 <StatusText> {turn}'s Turn</StatusText>
                 <StatusText> {statusText} </StatusText>
-                <StatusText> {mode === gameMode.PLAYER ? "Player vs Player" : "Player vs AI"} </StatusText>
                 <ButtonWrapper>
                     <SimpleResetButton onClick={() => {
                         resetScore()
-                    }}> Reset </SimpleResetButton>
-                    <SimpleModeButton onClick={() => {
-                        mode === gameMode.PLAYER ? setMode(gameMode.AI) : setMode(gameMode.PLAYER);
-                    }}> {mode === gameMode.PLAYER ? "Switch Mode" : "Switch Mode"}</SimpleModeButton>
+                    }}> Reset Score </SimpleResetButton>
                 </ButtonWrapper>
             </StyledGameBoard>
         </>
