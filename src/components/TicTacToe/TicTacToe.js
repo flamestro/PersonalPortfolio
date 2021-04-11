@@ -55,23 +55,6 @@ const TicTacToeWrapper = styled.div`
   flex-wrap: wrap;
 `
 
-const SimpleModeButton = styled.div`
-  border-bottom-right-radius: 10px;
-  user-select: none;
-  border: solid black 3px;
-  display: flex;
-  justify-content: center;
-  font-size: 20px;
-  flex: 1;
-  background-color: #d6d8d9;
-  transition: background-color 0.6s;
-  &:hover{
-    cursor: pointer;
-    background-color: #ffffff;
-    transition: background-color 1s;
-  }
-`
-
 const SimpleResetButton = styled.div`
   border-bottom-left-radius: 10px;
   border: solid black 3px;
