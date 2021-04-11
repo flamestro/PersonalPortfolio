@@ -44,17 +44,18 @@ const CustomSimpleImage = styled.img`
 `;
 
 const StyledGithubIcon = styled.img`
-    width: 25px;
-    height: 25px;
+    width: 23px;
+    height: 23px;
 `;
 
 const InfoText = (props) => {
     return (
         <div>
             <b>{props.infoCardData.title}</b>
-            {props.infoCardData.description} {props.infoCardData.gitHubLink ?
-            <a target="_blank" href={props.infoCardData.gitHubLink}><StyledGithubIcon
-                src={"../../../resources/githubIcon.png"}/></a> : null}
+            {props.infoCardData.description + " "}
+            {props.infoCardData.gitHubLink ?
+                <a target="_blank" href={props.infoCardData.gitHubLink}><StyledGithubIcon
+                    src={"../../../resources/githubIcon.png"}/></a>: null}
             {props.infoCardData.usedTech ? <div><br/> <b>TechStack: </b>{props.infoCardData.usedTech} </div> : null}
         </div>
     );
